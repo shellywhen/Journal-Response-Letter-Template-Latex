@@ -1,0 +1,43 @@
+\documentclass[12pt,american]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+\usepackage[hidelinks]{hyperref}
+\usepackage{babel}
+\usepackage[babel]{microtype}
+\usepackage[babel]{csquotes}
+\usepackage[journal={IEEE Transactions on Visualization and Computer Graphics},
+			manuscript={TVCG-2022-X},
+			editor={Dr. Doom}]{reviewresponse}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\titleformat{\section}
+{\normalfont\Large\color{black}}
+  {\thesection}{1em}{} % [{\titlerule[0.8pt]}]
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{.5pt}
+\usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
+
+\bibliography{literature.bib}
+
+
+\title{My Awesome Paper Title}
+\author{Donald Duck and Mickey Mouse}
+
+
+\begin{document}
+\maketitle
+
+% Cover Letter
+\input{cover_letter.tex}
+\setcounter{page}{0}
+\pagestyle{fancy}
+\fancyfoot[R]{\thepage\ / \pageref{LastPage}}
+\fancyfoot[L]{Response Letter for TVCG-2022-X}
+\fancyfoot[C]{\ }
+\input{Reviewers/Meta.tex}
+\input{Reviewers/R1.tex}
+\input{Reviewers/R2.tex}
+\input{Reviewers/R3.tex}
+
+\end{document}

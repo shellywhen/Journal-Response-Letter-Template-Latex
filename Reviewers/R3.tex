@@ -1,0 +1,14 @@
+\reviewer
+\begin{revcomment}
+	Did you know, that the references can be separated for the individual reviewers?
+\end{revcomment}
+\begin{revresponse}
+	Yes. When using \href{https://www.ctan.org/pkg/biblatex}{biblatex}, you can use the \texttt{refsection=section} option to achieve that.
+	If we cite a new reference like \cite{Besser2021} here, it will again be number [1].
+	
+	Note that you might have to run \texttt{pdflatex} and \texttt{biber} multiple times.
+	
+	And reference [1] for Reviewer 2~\cite{ReviewerReference} is now number [2].
+	
+	\printpartbibliography{Besser2021,ReviewerReference}
+\end{revresponse}
