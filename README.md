@@ -1,7 +1,6 @@
 # LaTeX Template for Review Responses
 
-This repository is adapted from [Karl-Ludwig Besser's template](https://www.overleaf.com/latex/templates/review-response-template/tmbvmjstxwrd), which provides a simple LaTeX template for writing responses to
-reviewers.
+This repository is adapted from [Karl-Ludwig Besser's template](https://www.overleaf.com/latex/templates/review-response-template/tmbvmjstxwrd), which provides a simple LaTeX template for writing responses to reviewers. You may preview the PDF file [here](https://shellywhen.github.io/Journal-Response-Letter-Template-Latex/Review_Response_Template.pdf)
 
 # Usage
 
