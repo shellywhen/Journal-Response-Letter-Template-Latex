@@ -13,6 +13,9 @@
 \usepackage[a4paper,total={160mm,245mm},left=25mm,top=25mm]{geometry}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{.5pt}
+\usepackage[shortlabels]{enumitem}
+\newlist{detail}{itemize}{3}
+\setlist[detail, 1]{label=\textbullet,leftmargin=21pt,nosep}
 \usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
 
 \bibliography{literature.bib}
@@ -30,7 +33,7 @@
 \setcounter{page}{0}
 \pagestyle{fancy}
 \fancyfoot[R]{\thepage\ / \pageref{LastPage}}
-\fancyfoot[L]{Response Letter for TVCG-2022-X}
+\fancyfoot[L]{Response Letter for TVCG-2023-X}
 \fancyfoot[C]{\ }
 \input{Reviewers/Meta.tex}
 \input{Reviewers/R1.tex}

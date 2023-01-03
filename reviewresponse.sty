@@ -39,11 +39,11 @@
 
 
 %%% General Settings
-\setlength{\parindent}{0pt}
+\setlength{\parindent}{12pt}
 \setlength{\parskip}{.25em}
-\renewcommand{\baselinestretch}{1.0}
 \setlength{\headheight}{15pt}
  \addtolength{\topmargin}{-3pt}
+\renewcommand{\baselinestretch}{1.0}   
 \textheight 235mm        
 
 %%%
@@ -52,7 +52,7 @@
 \newcounter{reviewer@counter}
 \setcounter{reviewer@counter}{0}
 \newcounter{reviewcomment@counter}[reviewer@counter]
-\setcounter{reviewcomment@counter}{1}
+\setcounter{reviewcomment@counter}{0}
 %%%
 
 %%% Commands
@@ -79,9 +79,9 @@
 \newcommand{\editor}{
 	\clearpage
 	\@ifundefined{pdfbookmark}{}{%
-		\pdfbookmark[1]{Reponse to the Editor}{hyperref@editor}%
+		\pdfbookmark[1]{Reponse to the Meta Review}{hyperref@editor}%
 	}%
-	\section*{\textbf{Authors' Response to the Editor}}
+	\section*{\textbf{Response to the Meta Review}}
 }
 
 \newcommand{\reviewer}{
@@ -90,12 +90,13 @@
 	\@ifundefined{pdfbookmark}{}{%
 		\pdfbookmark[1]{Reviewer \arabic{reviewer@counter}}{hyperref@reviewer\arabic{reviewer@counter}}%
 	}%
-	\section*{\textbf{Authors' Response to Reviewer \arabic{reviewer@counter}}}
+	\section*{\textbf{\bfseries{Response to Reviewer \arabic{reviewer@counter}}}}
 }
 %%%
 
 %%% Blocks %%%
 \newenvironment{generalcomment}{%
+\refstepcounter{reviewcomment@counter}
 	\begin{tcolorbox}[adjusted title={Summary Comment \arabic{reviewcomment@counter}}, fonttitle={\bfseries}, enhanced jigsaw, colbacktitle={colorcommentframe},arc=0pt,boxrule=0em,opacityframe=0,colback={colorcommentbg}]
 }{\end{tcolorbox}}
 
@@ -104,7 +105,7 @@
 }{\end{tcolorbox}}
 
 \newenvironment{revresponse}[1][{Thank you for the comment.}]{%
-	\textbf{Response \arabic{reviewer@counter}.\arabic{reviewcomment@counter}:} #1\par
+	\noindent\textbf{Response \arabic{reviewer@counter}.\arabic{reviewcomment@counter}:} #1\par
 }{\vspace{1em}}
 
 \newenvironment{revmeta}[1][{Thank you for the comment.}]{%
