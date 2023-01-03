@@ -1,4 +1,4 @@
-\documentclass[12pt,american]{scrartcl}
+\documentclass[12pt,american]{article}
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
 \usepackage[hidelinks]{hyperref}
@@ -6,14 +6,11 @@
 \usepackage[babel]{microtype}
 \usepackage[babel]{csquotes}
 \usepackage[journal={IEEE Transactions on Visualization and Computer Graphics},
-			manuscript={TVCG-2022-X},
+			manuscript={TVCG-2023-X},
 			editor={Dr. Doom}]{reviewresponse}
 \usepackage{fancyhdr}
 \usepackage{lastpage}
-\usepackage{titlesec}
-\titleformat{\section}
-{\normalfont\Large\color{black}}
-  {\thesection}{1em}{} % [{\titlerule[0.8pt]}]
+\usepackage[a4paper,total={160mm,245mm},left=25mm,top=25mm]{geometry}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{.5pt}
 \usepackage[backend=biber,style=ieee,dashed=false,url=false,isbn=false,defernumbers=true,refsection=section]{biblatex}
