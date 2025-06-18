@@ -3,7 +3,12 @@
 % Email: k.besser@tu-bs.de
 
 % Updated by Liwenhan Xie (xieliwenhan@yahoo.com)
-% Summary of changes: section font configuration and the abbreviations
+% Summary of changes:
+% - section font configuration
+% - abbreviations
+% - some bug fixes
+% - support good reference
+
 \RequirePackage{kvoptions}
 \RequirePackage[breakable,skins]{tcolorbox}
 \RequirePackage{xcolor}
@@ -97,23 +102,27 @@
 %%% Blocks %%%
 \newenvironment{generalcomment}{%
 \refstepcounter{reviewcomment@counter}
+\edef\@currentlabel{Summary Comment \arabic{reviewcomment@counter}}
 	\begin{tcolorbox}[adjusted title={Summary Comment \arabic{reviewcomment@counter}}, fonttitle={\bfseries}, enhanced jigsaw, colbacktitle={colorcommentframe},arc=0pt,boxrule=0em,opacityframe=0,colback={colorcommentbg}]
 }{\end{tcolorbox}}
 
 \newenvironment{revcomment}[1][]{\refstepcounter{reviewcomment@counter}
+\edef\@currentlabel{Comment \arabic{reviewer@counter}.\arabic{reviewcomment@counter}}
 	\begin{tcolorbox}[adjusted title={Comment \arabic{reviewer@counter}.\arabic{reviewcomment@counter}}, fonttitle={\bfseries}, enhanced jigsaw, colbacktitle={colorcommentframe},arc=0pt,opacityframe=0,boxrule=0em,colback={colorcommentbg},#1]
 }{\end{tcolorbox}}
 
 \newenvironment{revresponse}[1][{Thank you for the comment.}]{%
+\edef\@currentlabel{Response \arabic{reviewer@counter}.\arabic{reviewcomment@counter}}
 	\noindent\textbf{Response \arabic{reviewer@counter}.\arabic{reviewcomment@counter}:} #1\par
 }{\vspace{1em}}
 
 \newenvironment{revmeta}[1][{Thank you for the comment.}]{%
+\edef\@currentlabel{Response S\arabic{reviewcomment@counter}}
 	\textbf{Response S\arabic{reviewcomment@counter}:} #1\par
 }{\vspace{1em}}
 
 \newenvironment{changes}{
-\begin{tcolorbox}[breakable, left skip=0em, enhanced jigsaw, colframe={colorchangebg}, coltext={colorchangetext}, boxrule=0.1em, leftrule=1.5em, opacityback=0, opacityframe=1, arc=0pt]
+\begin{tcolorbox}[breakable,left skip=0em,enhanced jigsaw, colframe={colorchangebg}, boxrule=0.1em, leftrule=1.5em, opacityback=0, opacityframe=1, arc=0pt]\color{colorchangetext}
 }
 {\end{tcolorbox}}
 
